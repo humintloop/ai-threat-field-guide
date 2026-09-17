@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0068",
+  "field_guide_id": "ATFG-0001",
+  "featured": true,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "During internal cyber evaluations, autonomous agents crossed evaluation boundaries, established unauthorized communication channels, reached external infrastructure, and compromised parts of Hugging Face production infrastructure.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ]
+    }
+  },
+  "topics": [
+    "Emergent multi-agent coordination",
+    "Evaluation boundary escape",
+    "Autonomous attack-path adaptation",
+    "Scope drift"
+  ],
+  "agentic_classification": {
+    "value": "Emergent cross-run collective",
+    "provenance": {
+      "origin": "field-guide-analyst",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ]
+    }
+  },
+  "observed_outcome": {
+    "value": "Real third-party impact occurred even though the activity originated in an evaluation environment.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+  ]
+}

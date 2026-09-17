@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "project": "AI Threat Field Guide",
+  "as_of": "2026-09-15",
+  "atlas_version": "2026.09",
+  "featured_case_id": "AML.CS0068",
+  "data_philosophy": "If MITRE says it, import it. If we say it, label it.",
+  "event_types": [
+    "Incident",
+    "Research Demonstration",
+    "Proof of Concept",
+    "Reported / Unverified"
+  ],
+  "mapping_origin_values": [
+    "MITRE ATLAS official",
+    "Primary-source explicit",
+    "Analyst mapping"
+  ],
+  "principles": [
+    "Keep event confidence separate from actor attribution confidence.",
+    "Do not convert a research demonstration into an in-the-wild incident.",
+    "Preserve the ATLAS content version used for every mapping.",
+    "Prefer primary technical sources and official ATLAS relationships.",
+    "Record failed or partial exploitation explicitly rather than implying compromise."
+  ]
+}

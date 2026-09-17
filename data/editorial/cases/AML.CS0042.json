@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0042",
+  "field_guide_id": "ATFG-0008",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Microsoft found a backdoor that used the OpenAI Assistants API as a covert command-and-control relay to retrieve commands and return encrypted results.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2025/11/03/sesameop-novel-backdoor-uses-openai-assistants-api-for-command-and-control/"
+      ]
+    }
+  },
+  "topics": [
+    "AI service as command-and-control",
+    "Living off trusted cloud infrastructure"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "The AI service was used as legitimate-looking C2 infrastructure; Microsoft states this was not a vulnerability or misconfiguration in OpenAI.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2025/11/03/sesameop-novel-backdoor-uses-openai-assistants-api-for-command-and-control/"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://www.microsoft.com/en-us/security/blog/2025/11/03/sesameop-novel-backdoor-uses-openai-assistants-api-for-command-and-control/"
+  ]
+}

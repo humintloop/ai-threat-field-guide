@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0070",
+  "field_guide_id": "ATFG-0004",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Unit 42 recovered a Hermes Agent session in which DeepSeek autonomously enumerated targets, searched for exploits, ran scans, evaluated failures, and changed its attack path after the initial Langflow route failed.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+      ]
+    }
+  },
+  "topics": [
+    "Autonomous exploit research",
+    "Adaptive target selection",
+    "Agentic reconnaissance"
+  ],
+  "agentic_classification": {
+    "value": "Single autonomous offensive agent; not a swarm",
+    "provenance": {
+      "origin": "field-guide-analyst",
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+      ]
+    }
+  },
+  "observed_outcome": {
+    "value": "The recovered autonomous Langflow and n8n exploitation attempts did not obtain access; separate manual activity in the workspace showed other offensive operations.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/"
+  ]
+}

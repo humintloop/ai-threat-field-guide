@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0044",
+  "field_guide_id": "ATFG-0010",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "LAMEHUG used an LLM endpoint to dynamically generate malicious commands from natural-language prompts after delivery through phishing.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://cert.gov.ua/article/6284730"
+      ]
+    }
+  },
+  "topics": [
+    "AI-in-the-loop malware",
+    "Dynamic command generation",
+    "LLM-assisted post-compromise activity"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "The malware collected local system information and files and exfiltrated data to attacker-controlled infrastructure.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://cert.gov.ua/article/6284730"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": {
+    "value": "Retain the attribution as a source assessment rather than an independent project finding.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://cert.gov.ua/article/6284730"
+      ]
+    }
+  },
+  "additional_sources": [
+    "https://cert.gov.ua/article/6284730"
+  ]
+}

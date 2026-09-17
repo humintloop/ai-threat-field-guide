@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "patterns": [
+    {
+      "id": "PAT-001",
+      "name": "Autonomous Attack-Path Adaptation",
+      "description": "An agent revises its route to an objective based on failed prerequisites, new evidence, or discovered opportunities.",
+      "related_cases": [
+        "AML.CS0068",
+        "AML.CS0071",
+        "AML.CS0070"
+      ],
+      "primary_atlas_technique": "AML.T0117"
+    },
+    {
+      "id": "PAT-002",
+      "name": "Multi-Agent Offensive Orchestration",
+      "description": "An orchestration layer allocates offensive tasks across specialized agents and redirects them based on results.",
+      "related_cases": [
+        "AML.CS0071"
+      ],
+      "primary_atlas_technique": "AML.T0124"
+    },
+    {
+      "id": "PAT-003",
+      "name": "Emergent Agent Coordination",
+      "description": "Independent agent runs share artifacts, requests, findings, credentials, or tasks without a conventional central orchestrator.",
+      "related_cases": [
+        "AML.CS0068"
+      ],
+      "primary_atlas_technique": "AML.T0118.000"
+    },
+    {
+      "id": "PAT-004",
+      "name": "AI Agent Tool Supply-Chain Poisoning",
+      "description": "A trusted or adopted agent tool is modified so normal invocation produces hidden malicious side effects.",
+      "related_cases": [
+        "AML.CS0053"
+      ],
+      "primary_atlas_technique": "AML.T0110.001"
+    },
+    {
+      "id": "PAT-005",
+      "name": "AI Service as Command-and-Control",
+      "description": "A legitimate AI service API is repurposed as a covert command relay or storage channel.",
+      "related_cases": [
+        "AML.CS0042"
+      ],
+      "primary_atlas_technique": "AML.T0096"
+    },
+    {
+      "id": "PAT-006",
+      "name": "Persistent AI Memory Manipulation",
+      "description": "Adversarial instructions alter assistant memory so effects survive the originating interaction.",
+      "related_cases": [
+        "AML.CS0072"
+      ],
+      "primary_atlas_technique": "AML.T0080.000"
+    },
+    {
+      "id": "PAT-007",
+      "name": "Behavioral Model Extraction",
+      "description": "High-volume model interactions are used to reproduce model capabilities through distillation or imitation.",
+      "related_cases": [
+        "AML.CS0056"
+      ],
+      "primary_atlas_technique": "AML.T0024.002"
+    },
+    {
+      "id": "PAT-008",
+      "name": "AI-in-the-Loop Malware",
+      "description": "Malware queries an AI model at runtime to generate or adapt commands instead of relying only on fixed logic.",
+      "related_cases": [
+        "AML.CS0044"
+      ],
+      "primary_atlas_technique": "AML.T0102"
+    },
+    {
+      "id": "PAT-009",
+      "name": "AI Abuse-as-a-Service",
+      "description": "Actors package stolen access, jailbreak tooling, or altered service behavior into a resale or service model.",
+      "related_cases": [
+        "AML.CS0057"
+      ],
+      "primary_atlas_technique": "AML.T0054"
+    }
+  ]
+}

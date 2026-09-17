@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0072",
+  "field_guide_id": "ATFG-0005",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Microsoft documented crafted 'Summarize with AI' and share links that embedded instructions intended to store an operator's domain or product as an authoritative source in assistant memory.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/"
+      ]
+    }
+  },
+  "topics": [
+    "Memory poisoning",
+    "Recommendation manipulation",
+    "Prompt-bearing links"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "Microsoft identified more than 50 distinct promotional memory-manipulation prompts from 31 companies across 14 industries over roughly 60 days; effectiveness varied by assistant and protections changed over time.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/"
+  ]
+}

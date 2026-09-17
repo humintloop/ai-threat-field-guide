@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0069",
+  "field_guide_id": "ATFG-0003",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Anthropic reported a campaign in which a jailbroken Claude Code agent performed much of the tactical intrusion workflow, including reconnaissance, vulnerability discovery, exploitation, credential collection, and data analysis.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage"
+      ]
+    }
+  },
+  "topics": [
+    "AI-orchestrated intrusion",
+    "Human-on-the-loop cyber operations",
+    "Jailbroken offensive agent"
+  ],
+  "agentic_classification": {
+    "value": "Agentic campaign with human stage gates",
+    "provenance": {
+      "origin": "field-guide-analyst",
+      "source_urls": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage"
+      ]
+    }
+  },
+  "observed_outcome": {
+    "value": "Anthropic reported a small number of successful intrusions and estimated the agent performed 80-90% of campaign activity, with human operators retaining several critical decision points.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": {
+    "value": "Anthropic assessed the group as Chinese state-sponsored with high confidence; retain that as an attributed vendor assessment rather than an independent project conclusion.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage"
+      ]
+    }
+  },
+  "additional_sources": [
+    "https://www.anthropic.com/news/disrupting-AI-espionage"
+  ]
+}

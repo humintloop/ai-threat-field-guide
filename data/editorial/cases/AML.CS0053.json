@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0053",
+  "field_guide_id": "ATFG-0006",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "An actor registered an npm package impersonating Postmark, released legitimate versions to gain adoption, then shipped a malicious update that silently added an attacker-controlled BCC recipient to emails.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package"
+      ]
+    }
+  },
+  "topics": [
+    "MCP supply-chain compromise",
+    "Tool implementation poisoning",
+    "Trust-building rug pull"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "Email contents sent through the poisoned tool could be exfiltrated to the attacker.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package"
+  ]
+}

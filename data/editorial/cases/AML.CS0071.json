@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0071",
+  "field_guide_id": "ATFG-0002",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "A multi-agent framework coordinated specialized sub-agents across reconnaissance, authentication attacks, API testing, vulnerability research, and exploitation. MITRE records up to eight specialized agents across 12 attack waves.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+        "https://moda.gov.tw/ACS/press/news/press/20394"
+      ]
+    }
+  },
+  "topics": [
+    "Multi-agent offensive orchestration",
+    "Autonomous reconnaissance",
+    "Adaptive attack planning",
+    "Automated collection"
+  ],
+  "agentic_classification": {
+    "value": "Centrally orchestrated multi-agent operation",
+    "provenance": {
+      "origin": "field-guide-analyst",
+      "source_urls": [
+        "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+        "https://moda.gov.tw/ACS/press/news/press/20394"
+      ]
+    }
+  },
+  "observed_outcome": {
+    "value": "The reporting cited by MITRE describes compromised accounts and extraction of personnel, configuration, credential, and network information.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+        "https://moda.gov.tw/ACS/press/news/press/20394"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": {
+    "value": "Do not infer state sponsorship from language or geography. MITRE lists the actor as an unknown Chinese-language operator.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+        "https://moda.gov.tw/ACS/press/news/press/20394"
+      ]
+    }
+  },
+  "additional_sources": [
+    "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+    "https://moda.gov.tw/ACS/press/news/press/20394"
+  ]
+}

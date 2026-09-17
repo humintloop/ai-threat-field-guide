@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0056",
+  "field_guide_id": "ATFG-0009",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Anthropic reported large-scale campaigns using roughly 24,000 accounts and more than 16 million exchanges to collect Claude outputs for distillation.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
+      ]
+    }
+  },
+  "topics": [
+    "Behavioral model extraction",
+    "Industrial-scale distillation",
+    "Account-fleet abuse"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "MITRE classifies the case as an incident and maps the activity to model extraction and API access techniques.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": {
+    "value": "The identification of the three labs and characterization of the activity come from Anthropic's reporting and should remain explicitly attributed.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
+      ]
+    }
+  },
+  "additional_sources": [
+    "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks"
+  ]
+}

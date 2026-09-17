@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0047",
+  "field_guide_id": "ATFG-0007",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "An inappropriately scoped GitHub token enabled a malicious commit to the Amazon Q Developer VS Code extension. The malicious prompt was designed to deploy an agent with broad tool trust and destructive instructions.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
+      ]
+    }
+  },
+  "topics": [
+    "AI developer-tool supply chain",
+    "Destructive agent payload",
+    "Credential-scope failure"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "AWS states the malicious code was distributed in version 1.84.0 but failed to execute because of a syntax error, preventing changes to customer environments.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/"
+  ]
+}

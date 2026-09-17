@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0059",
+  "field_guide_id": "ATFG-RD-0001",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Researchers demonstrated a zero-click chain in which malicious email content was later retrieved into Copilot context and used to trigger prompt injection and an exfiltration path.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2025-32711"
+      ]
+    }
+  },
+  "topics": [],
+  "agentic_classification": null,
+  "observed_outcome": null,
+  "status_note": {
+    "value": "MITRE classifies this as an Exercise, and its case record states there was no evidence it was exploited in the wild.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://www.cve.org/CVERecord?id=CVE-2025-32711"
+      ]
+    }
+  },
+  "attribution_note": null,
+  "additional_sources": [
+    "https://www.cve.org/CVERecord?id=CVE-2025-32711"
+  ]
+}

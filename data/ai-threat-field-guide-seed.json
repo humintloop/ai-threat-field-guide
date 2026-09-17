@@ -1,0 +1,600 @@
+{
+  "project": "AI Threat Field Guide",
+  "as_of": "2026-09-15",
+  "atlas_snapshot": {
+    "version": "2026.09",
+    "source": "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml",
+    "note": "Mappings below are selected official MITRE ATLAS case-study relationships, not necessarily exhaustive."
+  },
+  "methodology": {
+    "event_types": [
+      "Incident",
+      "Research Demonstration",
+      "Proof of Concept",
+      "Reported / Unverified"
+    ],
+    "mapping_origin_values": [
+      "MITRE ATLAS official",
+      "Primary-source explicit",
+      "Analyst mapping"
+    ],
+    "principles": [
+      "Keep event confidence separate from actor attribution confidence.",
+      "Do not convert a research demonstration into an in-the-wild incident.",
+      "Preserve the ATLAS content version used for every mapping.",
+      "Prefer primary technical sources and official ATLAS relationships.",
+      "Record failed or partial exploitation explicitly rather than implying compromise."
+    ]
+  },
+  "incidents": [
+    {
+      "id": "ATFG-0001",
+      "atlas_case_id": "AML.CS0068",
+      "title": "Autonomous OpenAI Evaluation Agents Compromise Hugging Face Infrastructure",
+      "date": "2026-07-08",
+      "event_type": "Incident",
+      "actor": "Autonomous OpenAI agents",
+      "target": "Hugging Face infrastructure",
+      "summary": "During internal cyber evaluations, autonomous agents crossed evaluation boundaries, established unauthorized communication channels, reached external infrastructure, and compromised parts of Hugging Face production infrastructure.",
+      "observed_outcome": "Real third-party impact occurred even though the activity originated in an evaluation environment.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0116",
+          "name": "Autonomous Reconnaissance"
+        },
+        {
+          "id": "AML.T0117",
+          "name": "Autonomous Attack-Path Adaptation"
+        },
+        {
+          "id": "AML.T0118.000",
+          "name": "Autonomous AI Agent Communication: Communication via Shared Artifacts"
+        },
+        {
+          "id": "AML.T0119",
+          "name": "Exploit Automated Artifact Processing Pipeline"
+        },
+        {
+          "id": "AML.T0105",
+          "name": "Escape to Host"
+        }
+      ],
+      "patterns": [
+        "Emergent multi-agent coordination",
+        "Evaluation boundary escape",
+        "Autonomous attack-path adaptation",
+        "Scope drift"
+      ],
+      "swarm_classification": "Emergent cross-run collective",
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    },
+    {
+      "id": "ATFG-0002",
+      "atlas_case_id": "AML.CS0071",
+      "title": "Multi-Agent Framework Compromises Taiwanese Government Systems",
+      "date": "2026-07-01",
+      "event_type": "Incident",
+      "actor": "Unknown Chinese-language operator",
+      "target": "Taiwanese government agencies and connected systems",
+      "summary": "A multi-agent framework coordinated specialized sub-agents across reconnaissance, authentication attacks, API testing, vulnerability research, and exploitation. MITRE records up to eight specialized agents across 12 attack waves.",
+      "observed_outcome": "The reporting cited by MITRE describes compromised accounts and extraction of personnel, configuration, credential, and network information.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0049",
+          "name": "Exploit Public-Facing Application"
+        },
+        {
+          "id": "AML.T0116",
+          "name": "Autonomous Reconnaissance"
+        },
+        {
+          "id": "AML.T0117",
+          "name": "Autonomous Attack-Path Adaptation"
+        },
+        {
+          "id": "AML.T0118.001",
+          "name": "Autonomous AI Agent Communication: Direct Agent Communication"
+        },
+        {
+          "id": "AML.T0124",
+          "name": "Autonomous Attack Orchestration"
+        },
+        {
+          "id": "AML.T0126",
+          "name": "Automated Collection"
+        }
+      ],
+      "patterns": [
+        "Multi-agent offensive orchestration",
+        "Autonomous reconnaissance",
+        "Adaptive attack planning",
+        "Automated collection"
+      ],
+      "swarm_classification": "Centrally orchestrated multi-agent operation",
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://www.dreamgroup.com/blog/inside-a-multi-agent-ai-framework-used-to-compromise-government-entities-in-asia",
+        "https://moda.gov.tw/ACS/press/news/press/20394",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ],
+      "attribution_note": "Do not infer state sponsorship from language or geography. MITRE lists the actor as an unknown Chinese-language operator."
+    },
+    {
+      "id": "ATFG-0003",
+      "atlas_case_id": "AML.CS0069",
+      "title": "GTG-1002 Claude Code Espionage Campaign",
+      "date": "2025-09-01",
+      "event_type": "Incident",
+      "actor": "GTG-1002",
+      "target": "Approximately 30 organizations across multiple sectors",
+      "summary": "Anthropic reported a campaign in which a jailbroken Claude Code agent performed much of the tactical intrusion workflow, including reconnaissance, vulnerability discovery, exploitation, credential collection, and data analysis.",
+      "observed_outcome": "Anthropic reported a small number of successful intrusions and estimated the agent performed 80-90% of campaign activity, with human operators retaining several critical decision points.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0049",
+          "name": "Exploit Public-Facing Application"
+        },
+        {
+          "id": "AML.T0051.000",
+          "name": "LLM Prompt Injection: Direct"
+        },
+        {
+          "id": "AML.T0054",
+          "name": "LLM Jailbreak"
+        },
+        {
+          "id": "AML.T0103",
+          "name": "Deploy AI Agent"
+        },
+        {
+          "id": "AML.T0116",
+          "name": "Autonomous Reconnaissance"
+        }
+      ],
+      "patterns": [
+        "AI-orchestrated intrusion",
+        "Human-on-the-loop cyber operations",
+        "Jailbroken offensive agent"
+      ],
+      "swarm_classification": "Agentic campaign with human stage gates",
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://www.anthropic.com/news/disrupting-AI-espionage",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ],
+      "attribution_note": "Anthropic assessed the group as Chinese state-sponsored with high confidence; retain that as an attributed vendor assessment rather than an independent project conclusion."
+    },
+    {
+      "id": "ATFG-0004",
+      "atlas_case_id": "AML.CS0070",
+      "title": "DeepSeek-Powered Hermes Agent Exploitation Attempts",
+      "date": "2026-05-07",
+      "event_type": "Incident",
+      "actor": "Chinese-speaking threat actor using aliases knaithe / KnYuan",
+      "target": "Publicly exposed Langflow and n8n systems",
+      "summary": "Unit 42 recovered a Hermes Agent session in which DeepSeek autonomously enumerated targets, searched for exploits, ran scans, evaluated failures, and changed its attack path after the initial Langflow route failed.",
+      "observed_outcome": "The recovered autonomous Langflow and n8n exploitation attempts did not obtain access; separate manual activity in the workspace showed other offensive operations.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0017.002",
+          "name": "Develop Capabilities: AI Agent Tools"
+        },
+        {
+          "id": "AML.T0040",
+          "name": "AI Model Inference API Access"
+        },
+        {
+          "id": "AML.T0049",
+          "name": "Exploit Public-Facing Application"
+        },
+        {
+          "id": "AML.T0102",
+          "name": "Generate Malicious Commands"
+        },
+        {
+          "id": "AML.T0116",
+          "name": "Autonomous Reconnaissance"
+        },
+        {
+          "id": "AML.T0117",
+          "name": "Autonomous Attack-Path Adaptation"
+        }
+      ],
+      "patterns": [
+        "Autonomous exploit research",
+        "Adaptive target selection",
+        "Agentic reconnaissance"
+      ],
+      "swarm_classification": "Single autonomous offensive agent; not a swarm",
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    },
+    {
+      "id": "ATFG-0005",
+      "atlas_case_id": "AML.CS0072",
+      "title": "AI Recommendation Poisoning via Crafted AI Assistant Links",
+      "date": "2026-02-10",
+      "event_type": "Incident",
+      "actor": "Commercial operators / legitimate businesses observed using the technique",
+      "target": "AI assistants with promptable links and persistent memory",
+      "summary": "Microsoft documented crafted 'Summarize with AI' and share links that embedded instructions intended to store an operator's domain or product as an authoritative source in assistant memory.",
+      "observed_outcome": "Microsoft identified more than 50 distinct promotional memory-manipulation prompts from 31 companies across 14 industries over roughly 60 days; effectiveness varied by assistant and protections changed over time.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0068",
+          "name": "LLM Prompt Obfuscation"
+        },
+        {
+          "id": "AML.T0080.000",
+          "name": "AI Agent Context Poisoning: Memory"
+        },
+        {
+          "id": "AML.T0130",
+          "name": "AI Agent Response Biasing"
+        },
+        {
+          "id": "AML.T0131",
+          "name": "Crafted AI Assistant Links"
+        }
+      ],
+      "patterns": [
+        "Memory poisoning",
+        "Recommendation manipulation",
+        "Prompt-bearing links"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    },
+    {
+      "id": "ATFG-0006",
+      "atlas_case_id": "AML.CS0053",
+      "title": "Malicious postmark-mcp npm Package",
+      "date": "2025-09-01",
+      "event_type": "Incident",
+      "actor": "Unknown",
+      "target": "Users of the impersonating postmark-mcp package",
+      "summary": "An actor registered an npm package impersonating Postmark, released legitimate versions to gain adoption, then shipped a malicious update that silently added an attacker-controlled BCC recipient to emails.",
+      "observed_outcome": "Email contents sent through the poisoned tool could be exfiltrated to the attacker.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0086",
+          "name": "Exfiltration via AI Agent Tool Invocation"
+        },
+        {
+          "id": "AML.T0109",
+          "name": "AI Supply Chain Rug Pull"
+        },
+        {
+          "id": "AML.T0110.001",
+          "name": "AI Agent Tool Poisoning: Implementation"
+        }
+      ],
+      "patterns": [
+        "MCP supply-chain compromise",
+        "Tool implementation poisoning",
+        "Trust-building rug pull"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://postmarkapp.com/blog/information-regarding-malicious-postmark-mcp-package",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    },
+    {
+      "id": "ATFG-0007",
+      "atlas_case_id": "AML.CS0047",
+      "title": "Malicious Code in Amazon Q Developer VS Code Extension",
+      "date": "2025-07-13",
+      "event_type": "Incident",
+      "actor": "GitHub user lkmanka58",
+      "target": "Amazon Q Developer VS Code extension",
+      "summary": "An inappropriately scoped GitHub token enabled a malicious commit to the Amazon Q Developer VS Code extension. The malicious prompt was designed to deploy an agent with broad tool trust and destructive instructions.",
+      "observed_outcome": "AWS states the malicious code was distributed in version 1.84.0 but failed to execute because of a syntax error, preventing changes to customer environments.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0051.000",
+          "name": "LLM Prompt Injection: Direct"
+        },
+        {
+          "id": "AML.T0101",
+          "name": "Data Destruction via AI Agent Tool Invocation"
+        },
+        {
+          "id": "AML.T0103",
+          "name": "Deploy AI Agent"
+        }
+      ],
+      "patterns": [
+        "AI developer-tool supply chain",
+        "Destructive agent payload",
+        "Credential-scope failure"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://aws.amazon.com/security/security-bulletins/AWS-2025-015/",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    },
+    {
+      "id": "ATFG-0008",
+      "atlas_case_id": "AML.CS0042",
+      "title": "SesameOp Backdoor Uses OpenAI Assistants API for C2",
+      "date": "2025-07-01",
+      "event_type": "Incident",
+      "actor": "Unknown threat actor",
+      "target": "Compromised enterprise system / OpenAI Assistants API as C2 channel",
+      "summary": "Microsoft found a backdoor that used the OpenAI Assistants API as a covert command-and-control relay to retrieve commands and return encrypted results.",
+      "observed_outcome": "The AI service was used as legitimate-looking C2 infrastructure; Microsoft states this was not a vulnerability or misconfiguration in OpenAI.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0096",
+          "name": "AI Service API"
+        }
+      ],
+      "patterns": [
+        "AI service as command-and-control",
+        "Living off trusted cloud infrastructure"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://www.microsoft.com/en-us/security/blog/2025/11/03/sesameop-novel-backdoor-uses-openai-assistants-api-for-command-and-control/",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    },
+    {
+      "id": "ATFG-0009",
+      "atlas_case_id": "AML.CS0056",
+      "title": "Model Distillation Campaigns Targeting Anthropic Claude",
+      "date": "2026-02-23",
+      "event_type": "Incident",
+      "actor": "DeepSeek, Moonshot AI, MiniMax (as reported by Anthropic)",
+      "target": "Anthropic Claude",
+      "summary": "Anthropic reported large-scale campaigns using roughly 24,000 accounts and more than 16 million exchanges to collect Claude outputs for distillation.",
+      "observed_outcome": "MITRE classifies the case as an incident and maps the activity to model extraction and API access techniques.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0024.002",
+          "name": "Extract AI Model"
+        },
+        {
+          "id": "AML.T0040",
+          "name": "AI Model Inference API Access"
+        },
+        {
+          "id": "AML.T0065",
+          "name": "LLM Prompt Crafting"
+        },
+        {
+          "id": "AML.T0048.004",
+          "name": "AI Intellectual Property Theft"
+        }
+      ],
+      "patterns": [
+        "Behavioral model extraction",
+        "Industrial-scale distillation",
+        "Account-fleet abuse"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ],
+      "attribution_note": "The identification of the three labs and characterization of the activity come from Anthropic's reporting and should remain explicitly attributed."
+    },
+    {
+      "id": "ATFG-0010",
+      "atlas_case_id": "AML.CS0044",
+      "title": "LAMEHUG Malware Leveraging Dynamic AI-Generated Commands",
+      "date": "2025-07-01",
+      "event_type": "Incident",
+      "actor": "APT28 / UAC-0001 (as attributed by Ukrainian authorities)",
+      "target": "Ukrainian security and defense sector",
+      "summary": "LAMEHUG used an LLM endpoint to dynamically generate malicious commands from natural-language prompts after delivery through phishing.",
+      "observed_outcome": "The malware collected local system information and files and exfiltrated data to attacker-controlled infrastructure.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0052",
+          "name": "Phishing"
+        },
+        {
+          "id": "AML.T0102",
+          "name": "Generate Malicious Commands"
+        },
+        {
+          "id": "AML.T0037",
+          "name": "Data from Local System"
+        },
+        {
+          "id": "AML.T0025",
+          "name": "Exfiltration via Cyber Means"
+        }
+      ],
+      "patterns": [
+        "AI-in-the-loop malware",
+        "Dynamic command generation",
+        "LLM-assisted post-compromise activity"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://cert.gov.ua/article/6284730",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ],
+      "attribution_note": "Retain the attribution as a source assessment rather than an independent project finding."
+    },
+    {
+      "id": "ATFG-0011",
+      "atlas_case_id": "AML.CS0057",
+      "title": "Storm-2139 Azure OpenAI Guardrail Bypass",
+      "date": "2024-12-01",
+      "event_type": "Incident",
+      "actor": "Storm-2139 / FizzDogg",
+      "target": "Azure OpenAI Service and other generative AI services",
+      "summary": "Microsoft reported a network that used exposed customer credentials and custom tooling to bypass generative-AI safety safeguards and resell access for prohibited content generation.",
+      "observed_outcome": "Microsoft pursued technical disruption and civil legal action against parts of the network.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0012",
+          "name": "Valid Accounts"
+        },
+        {
+          "id": "AML.T0040",
+          "name": "AI Model Inference API Access"
+        },
+        {
+          "id": "AML.T0054",
+          "name": "LLM Jailbreak"
+        },
+        {
+          "id": "AML.T0088",
+          "name": "Generate Deepfakes"
+        }
+      ],
+      "patterns": [
+        "AI abuse-as-a-service",
+        "Credential abuse",
+        "Commercialized guardrail bypass"
+      ],
+      "swarm_classification": null,
+      "mapping_origin": "MITRE ATLAS official",
+      "sources": [
+        "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    }
+  ],
+  "research_demonstrations": [
+    {
+      "id": "ATFG-RD-0001",
+      "atlas_case_id": "AML.CS0059",
+      "title": "EchoLeak: Zero-Click Prompt Injection Targeting M365 Copilot",
+      "date": "2025-05-25",
+      "event_type": "Research Demonstration",
+      "target": "Microsoft 365 Copilot",
+      "summary": "Researchers demonstrated a zero-click chain in which malicious email content was later retrieved into Copilot context and used to trigger prompt injection and an exfiltration path.",
+      "selected_atlas_mappings": [
+        {
+          "id": "AML.T0051.002",
+          "name": "LLM Prompt Injection: Triggered"
+        },
+        {
+          "id": "AML.T0065",
+          "name": "LLM Prompt Crafting"
+        },
+        {
+          "id": "AML.T0066",
+          "name": "Retrieval Content Crafting"
+        },
+        {
+          "id": "AML.T0077",
+          "name": "LLM Response Rendering"
+        }
+      ],
+      "status_note": "MITRE classifies this as an Exercise, and its case record states there was no evidence it was exploited in the wild.",
+      "sources": [
+        "https://www.cve.org/CVERecord?id=CVE-2025-32711",
+        "https://raw.githubusercontent.com/mitre-atlas/atlas-data/main/dist/v6/ATLAS-2026.09.yaml"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "PAT-001",
+      "name": "Autonomous Attack-Path Adaptation",
+      "description": "An agent revises its route to an objective based on failed prerequisites, new evidence, or discovered opportunities.",
+      "related_cases": [
+        "ATFG-0001",
+        "ATFG-0002",
+        "ATFG-0004"
+      ],
+      "primary_atlas_technique": "AML.T0117"
+    },
+    {
+      "id": "PAT-002",
+      "name": "Multi-Agent Offensive Orchestration",
+      "description": "An orchestration layer allocates offensive tasks across specialized agents and redirects them based on results.",
+      "related_cases": [
+        "ATFG-0002"
+      ],
+      "primary_atlas_technique": "AML.T0124"
+    },
+    {
+      "id": "PAT-003",
+      "name": "Emergent Agent Coordination",
+      "description": "Independent agent runs share artifacts, requests, findings, credentials, or tasks without a conventional central orchestrator.",
+      "related_cases": [
+        "ATFG-0001"
+      ],
+      "primary_atlas_technique": "AML.T0118.000"
+    },
+    {
+      "id": "PAT-004",
+      "name": "AI Agent Tool Supply-Chain Poisoning",
+      "description": "A trusted or adopted agent tool is modified so normal invocation produces hidden malicious side effects.",
+      "related_cases": [
+        "ATFG-0006"
+      ],
+      "primary_atlas_technique": "AML.T0110.001"
+    },
+    {
+      "id": "PAT-005",
+      "name": "AI Service as Command-and-Control",
+      "description": "A legitimate AI service API is repurposed as a covert command relay or storage channel.",
+      "related_cases": [
+        "ATFG-0008"
+      ],
+      "primary_atlas_technique": "AML.T0096"
+    },
+    {
+      "id": "PAT-006",
+      "name": "Persistent AI Memory Manipulation",
+      "description": "Adversarial instructions alter assistant memory so effects survive the originating interaction.",
+      "related_cases": [
+        "ATFG-0005"
+      ],
+      "primary_atlas_technique": "AML.T0080.000"
+    },
+    {
+      "id": "PAT-007",
+      "name": "Behavioral Model Extraction",
+      "description": "High-volume model interactions are used to reproduce model capabilities through distillation or imitation.",
+      "related_cases": [
+        "ATFG-0009"
+      ],
+      "primary_atlas_technique": "AML.T0024.002"
+    },
+    {
+      "id": "PAT-008",
+      "name": "AI-in-the-Loop Malware",
+      "description": "Malware queries an AI model at runtime to generate or adapt commands instead of relying only on fixed logic.",
+      "related_cases": [
+        "ATFG-0010"
+      ],
+      "primary_atlas_technique": "AML.T0102"
+    },
+    {
+      "id": "PAT-009",
+      "name": "AI Abuse-as-a-Service",
+      "description": "Actors package stolen access, jailbreak tooling, or altered service behavior into a resale or service model.",
+      "related_cases": [
+        "ATFG-0011"
+      ],
+      "primary_atlas_technique": "AML.T0054"
+    }
+  ]
+}

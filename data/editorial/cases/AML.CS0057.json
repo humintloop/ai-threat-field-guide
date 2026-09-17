@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "case_id": "AML.CS0057",
+  "field_guide_id": "ATFG-0011",
+  "featured": false,
+  "last_verified": "2026-09-15",
+  "summary": {
+    "value": "Microsoft reported a network that used exposed customer credentials and custom tooling to bypass generative-AI safety safeguards and resell access for prohibited content generation.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/"
+      ]
+    }
+  },
+  "topics": [
+    "AI abuse-as-a-service",
+    "Credential abuse",
+    "Commercialized guardrail bypass"
+  ],
+  "agentic_classification": null,
+  "observed_outcome": {
+    "value": "Microsoft pursued technical disruption and civil legal action against parts of the network.",
+    "provenance": {
+      "origin": "field-guide-editorial",
+      "source_urls": [
+        "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/"
+      ]
+    }
+  },
+  "status_note": null,
+  "attribution_note": null,
+  "additional_sources": [
+    "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/"
+  ]
+}
