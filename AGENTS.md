@@ -6,6 +6,8 @@
 - Borrow pacing, density, motion grammar, and tactile behavior without copying branding, artwork, layouts, or content.
 - Research credibility, explicit provenance, and the distinction between incidents, research demonstrations, and analyst interpretation take priority over visual spectacle.
 - Treat pinned MITRE ATLAS data as canonical and Field Guide material as a separate editorial layer.
+- Prefer progressive disclosure over analyst-console density: introduction, one featured evidence object, a compact expandable relationship summary, then recent records.
+- Use attributed source excerpts when the dataset lacks a rights-cleared local image; never imply that a reconstructed or generated visual is an evidentiary source capture.
 
 Run the local server yourself and open the preview in the browser available to this environment. Do not give the user server-start instructions when you can run it.
 
