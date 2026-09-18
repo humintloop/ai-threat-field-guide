@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "Researchers demonstrated a zero-click chain in which malicious email content was later retrieved into Copilot context and used to trigger prompt injection and an exfiltration path.",
+    "value": "Researchers demonstrated a zero-click chain in which Copilot later retrieved malicious email content, allowing prompt injection and an exfiltration path.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

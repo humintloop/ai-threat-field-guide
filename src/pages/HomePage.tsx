@@ -19,17 +19,17 @@ export function HomePage() {
       <div className="curiosity-intro">
         <span className="eyebrow">One question · {trail.length} ATLAS incidents</span>
         <h1>Who’s directing<br />the attack<span>?</span></h1>
-        <p className="hero-hook">Three incidents, three organizations.<br />Each card is one case, with a mark for how the work was set up.</p>
-        <p>Start with the first case, or skip ahead. Editors put these {trail.length} MITRE ATLAS records in a reading order. They remain separate incidents.</p>
+        <p className="hero-hook">Three incidents, three organizations.<br />Each case shows a different way agents coordinated or adapted.</p>
+        <p>Read the cases in order, or open any one directly. This is a Field Guide comparison of {trail.length} separate MITRE ATLAS records.</p>
       </div>
       <ol className="trail-map">
         {trail.map((story, i) => (
           <li key={story.caseId} className={`trail-card tone-${story.tone}${i === 0 ? ' trail-card--start' : ''}`}>
-            <div className="trail-card__meta"><span>0{i + 1}</span>{i === 0 ? <span>Start here</span> : <span>Skip here</span>}</div>
+            <div className="trail-card__meta"><span>0{i + 1}</span>{i === 0 ? <span>Start here</span> : <span>Explore case</span>}</div>
             <h2>{story.mechanism}</h2>
             <ArrangementMark tone={story.tone} label={`${story.mechanism} arrangement`} />
             <p>{story.pitch}</p>
-            <Link to={`/incidents/${story.caseId}`}>{i === 0 ? 'Open this case' : 'Skip to this case'} <ArrowRight size={16} /></Link>
+            <Link to={`/incidents/${story.caseId}`}>Open case <ArrowRight size={16} /></Link>
           </li>
         ))}
       </ol>
@@ -42,12 +42,12 @@ export function HomePage() {
     <section className="reference-invitation">
       <div>
         <span className="eyebrow">The rest of the guide</span>
-        <h2>{archiveCount} records, {metrics.techniques} techniques, and the reports they cite.</h2>
-        <p>{metrics.incidents} incidents and {metrics.research} research demonstration, pinned to MITRE ATLAS {seed.atlas_snapshot.version}. The demonstration stays labeled so it is not read as an in-the-wild attack.</p>
+        <h2>{archiveCount} records, {metrics.techniques} techniques, and the sources behind them.</h2>
+        <p>{metrics.incidents} incidents and {metrics.research} research demonstration, based on MITRE ATLAS {seed.atlas_snapshot.version}. The demonstration is labeled clearly so it is not mistaken for an in-the-wild attack.</p>
       </div>
       <div>
         <Link to="/network">See which cases share a technique <ArrowRight size={20} /></Link>
-        <Link to="/sources">Open the {metrics.sources} cited reports <ArrowRight size={20} /></Link>
+        <Link to="/sources">Browse {metrics.sources} cited sources <ArrowRight size={20} /></Link>
         <Link to="/about">How records are labeled <ArrowRight size={20} /></Link>
       </div>
     </section>

@@ -11,7 +11,7 @@ export function SourcesPage() {
   const results = useMemo(() => sources.filter((source) => `${source.hostname} ${source.title} ${source.url} ${source.caseIds.join(" ")}`.toLowerCase().includes(query.toLowerCase())), [query]);
   return (
     <Reveal>
-      <PageHeader eyebrow="The receipts" title="Original reports" description="Every document this guide cites. MITRE’s ATLAS links and extra Field Guide sources, listed once, with the cases that point to them. If we don’t know a source type, we don’t invent one." aside={<div className="record-count"><strong>{sources.length}</strong><span>documents cited</span></div>} />
+      <PageHeader eyebrow="Sources and provenance" title="Cited sources" description="Every document cited by this guide, listed once with the cases that reference it. Sources include links named by MITRE ATLAS and additional Field Guide references; they are not all primary reports." aside={<div className="record-count"><strong>{sources.length}</strong><span>sources cited</span></div>} />
       <div className="filter-bar filter-bar--solo"><label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => setParams(event.target.value ? { q: event.target.value } : {}, { replace: true })} placeholder="Search a site, title, or case ID…" /></label></div>
       <SectionMarker>Cited documents</SectionMarker>
       <div className="source-list source-list--index">

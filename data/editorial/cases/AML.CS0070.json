@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "Unit 42 recovered a Hermes Agent session in which DeepSeek autonomously enumerated targets, searched for exploits, ran scans, evaluated failures, and changed its attack path after the initial Langflow route failed.",
+    "value": "Unit 42 recovered a Hermes Agent session in which DeepSeek enumerated targets, searched for exploits, ran scans, evaluated failures, and changed course after the first Langflow route failed.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

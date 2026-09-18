@@ -38,3 +38,10 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Copy must follow the pinned record. Do not fill gaps with implied intent, success, or attribution.
 - Case titles are plain sentences from the pinned account, not fragment slogans or MITRE-abstract stiffening at display size. Keep the unsuccessful 0004 outcome scoped to autonomous attempts in the recovered session; manual workspace activity stays a separate line.
 - Homepage cards keep an arrangement signature. Put product sequences, counts, and the plot on the case page. A short unsuccessful hint may stay on the 0004 card so adaptation is not read as success.
+
+## Copy direction (2026-09-17)
+
+- Write for security practitioners, GRC and risk professionals, and interested general readers. Use direct, source-specific language that a practitioner would recognize; explain an unfamiliar term once rather than adopting an internal or theatrical metaphor.
+- Keep three provenance layers legible in the copy: MITRE ATLAS record, Field Guide summary, and Field Guide interpretation. Use “mapped to” for official case-to-technique relationships and reserve “used” for facts the source actually states.
+- Prefer “sources,” “ATLAS record,” “editorial pattern,” and “case details” over “receipts,” “pinned account,” “named shape,” and other in-world filing language. The guide may retain an essay voice in the featured trail, but navigation and reference pages should stay plain.
+- Do not call one-case editorial labels “recurring.” “Patterns” can include one or more cases; state the number of cases clearly.

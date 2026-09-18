@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "A multi-agent framework coordinated specialized sub-agents across reconnaissance, authentication attacks, API testing, vulnerability research, and exploitation. MITRE records up to eight specialized agents across 12 attack waves.",
+    "value": "A multi-agent framework coordinated specialized agents across reconnaissance, authentication attacks, API testing, vulnerability research, and exploitation. MITRE records up to eight agents across 12 attack waves.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

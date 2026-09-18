@@ -19,7 +19,7 @@ import { storyByCase } from "../data/trail";
 const navItems: Array<{ to: string; label: string; icon: typeof House; end?: boolean }> = [
   { to: "/", label: "Home", icon: House, end: true },
   { to: "/incidents", label: "Cases", icon: Crosshair },
-  { to: "/patterns", label: "Recurring", icon: Stack },
+  { to: "/patterns", label: "Patterns", icon: Stack },
   { to: "/techniques", label: "Techniques", icon: TreeStructure },
   { to: "/network", label: "Network", icon: ShareNetwork },
   { to: "/sources", label: "Sources", icon: LinkSimple },
@@ -28,7 +28,7 @@ const navItems: Array<{ to: string; label: string; icon: typeof House; end?: boo
 
 const crumbNames: Record<string, string> = {
   incidents: "Cases",
-  patterns: "Recurring",
+  patterns: "Patterns",
   techniques: "Techniques",
   network: "Network",
   sources: "Sources",
@@ -83,7 +83,7 @@ function GlobalSearch() {
         onFocus={() => setOpen(true)}
         type="search"
         placeholder="LAMEHUG or Hugging Face"
-        aria-label="Search cases, recurring labels, techniques, and sources"
+        aria-label="Search cases, editorial patterns, techniques, and sources"
         aria-expanded={open && Boolean(query)}
       />
       <kbd>⌘ K</kbd>
@@ -166,10 +166,10 @@ export function AppShell() {
       <footer className="site-footer">
         <div>
           <strong>AI Threat Field Guide</strong>
-          <p>Written by Aaron. Case facts and technique mappings come from MITRE ATLAS {seed.atlas_snapshot.version}. This project is not a MITRE product, and it is not affiliated with the vendors or governments named in the records.</p>
+          <p>Written by Aaron. MITRE ATLAS {seed.atlas_snapshot.version} supplies canonical case metadata and official technique mappings; Field Guide summaries and patterns are labeled editorial. This project is not a MITRE product, and it is not affiliated with the vendors or governments named in the records.</p>
         </div>
         <div className="site-footer__meta">
-          <span>Pinned MITRE ATLAS {seed.atlas_snapshot.version}</span>
+          <span>MITRE ATLAS snapshot {seed.atlas_snapshot.version}</span>
           <span>Research demonstrations stay labeled, separate from incidents.</span>
         </div>
       </footer>

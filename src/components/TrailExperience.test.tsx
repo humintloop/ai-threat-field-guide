@@ -50,15 +50,15 @@ describe('curiosity trail', () => {
   it('keeps the failed outcome in the narrative and labels the final onward destination', () => {
     render(<MemoryRouter><TrailNarrative story={trail[2]} /><KeepGoing story={trail[2]} /></MemoryRouter>);
     expect(screen.getByText(/None of the autonomous exploitation attempts/)).toBeVisible();
-    expect(screen.getByText(/Keep going · Leaving the essay/)).toBeVisible();
+    expect(screen.getByText(/Continue · Leaving the trail/)).toBeVisible();
     expect(screen.getByRole('link', { name: 'LAMEHUG calls a model to generate the next command.' })).toHaveAttribute('href', '/incidents/ATFG-0010');
     expect(screen.getByText('Three separate incidents')).toBeVisible();
-    expect(screen.getByRole('heading', { name: 'A shared board, an assigned team, and one agent.' })).toBeVisible();
+    expect(screen.getByRole('heading', { name: 'Three ways agent activity was organized or adapted.' })).toBeVisible();
   });
 
   it('labels Field Guide interpretation and does not invent a director for the Artifactory case', () => {
     render(<MemoryRouter><TrailNarrative story={trail[0]} /></MemoryRouter>);
-    expect(screen.getByText('Editorial reading')).toBeVisible();
+    expect(screen.getByText('What this comparison shows')).toBeVisible();
     expect(screen.getByText(/names no operator assigning specialist roles/)).toBeVisible();
     expect(screen.queryByText(/No manager/)).toBeNull();
   });

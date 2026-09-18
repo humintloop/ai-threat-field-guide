@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "Anthropic reported large-scale campaigns using roughly 24,000 accounts and more than 16 million exchanges to collect Claude outputs for distillation.",
+    "value": "Anthropic reported campaigns that used roughly 24,000 accounts and more than 16 million exchanges to collect Claude outputs for model distillation.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

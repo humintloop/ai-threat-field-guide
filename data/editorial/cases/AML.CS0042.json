@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "Microsoft found a backdoor that used the OpenAI Assistants API as a covert command-and-control relay to retrieve commands and return encrypted results.",
+    "value": "Microsoft reported a backdoor that used the OpenAI Assistants API as command-and-control infrastructure to retrieve commands and return encrypted results.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [
@@ -19,7 +19,7 @@
   ],
   "agentic_classification": null,
   "observed_outcome": {
-    "value": "The AI service was used as legitimate-looking C2 infrastructure; Microsoft states this was not a vulnerability or misconfiguration in OpenAI.",
+    "value": "Microsoft said the service was abused as legitimate-looking C2 infrastructure, not through a vulnerability or misconfiguration in OpenAI.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

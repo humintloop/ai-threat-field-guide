@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "Anthropic reported a campaign in which a jailbroken Claude Code agent performed much of the tactical intrusion workflow, including reconnaissance, vulnerability discovery, exploitation, credential collection, and data analysis.",
+    "value": "Anthropic reported a campaign in which a jailbroken Claude Code agent handled much of the tactical intrusion workflow, including reconnaissance, vulnerability discovery, exploitation, credential collection, and data analysis.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

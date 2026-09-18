@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "An actor registered an npm package impersonating Postmark, released legitimate versions to gain adoption, then shipped a malicious update that silently added an attacker-controlled BCC recipient to emails.",
+    "value": "An actor registered an npm package impersonating Postmark, released legitimate versions to gain adoption, then shipped an update that silently added an attacker-controlled BCC recipient to emails.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

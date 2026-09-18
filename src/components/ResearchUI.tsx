@@ -40,9 +40,9 @@ export function formatRecordDate(date: string, granularity = "day") {
 }
 
 export function mappingOriginLabel(origin?: MappingOrigin | string) {
-  if (origin === "MITRE ATLAS official") return "From the ATLAS record";
+  if (origin === "MITRE ATLAS official") return "Official ATLAS mapping";
   if (origin === "Primary-source explicit") return "Named in a source";
-  if (origin === "Analyst mapping") return "Field Guide reading";
+  if (origin === "Analyst mapping") return "Field Guide interpretation";
   if (!origin) return "Origin not stated";
   return origin;
 }
@@ -89,12 +89,12 @@ export function ExternalSource({ url, title, origin, caseTitle }: { url: string;
   return (
     <a className="source-row" href={url} target="_blank" rel="noreferrer">
       <div>
-        <span className="source-row__label">{sourceOriginLabel(origin)} · type not stated</span>
+        <span className="source-row__label">{sourceOriginLabel(origin)}</span>
         <strong>{title ?? host}</strong>
         <span className="source-row__host">{host}</span>
         {caseTitle && <span className="source-row__case">Cited by {caseTitle}</span>}
       </div>
-      <span className="source-row__open">Open original <ArrowUpRight size={16} aria-hidden="true" /></span>
+      <span className="source-row__open">Open source <ArrowUpRight size={16} aria-hidden="true" /></span>
     </a>
   );
 }

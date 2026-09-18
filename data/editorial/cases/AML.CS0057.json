@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "Microsoft reported a network that used exposed customer credentials and custom tooling to bypass generative-AI safety safeguards and resell access for prohibited content generation.",
+    "value": "Microsoft reported a network that used exposed customer credentials and custom tooling to bypass generative-AI safeguards, then resold access for prohibited content generation.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

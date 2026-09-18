@@ -31,7 +31,7 @@ export function IncidentsPage() {
 
   return (
     <Reveal>
-      <PageHeader eyebrow="The archive" title="Every case in this guide" description="Real-world incidents and research demonstrations, kept distinct. Open a case for MITRE’s pinned account. The trail on the home page is a separate Field Guide reading, not an official ATLAS relationship." aside={<div className="record-count"><strong>{results.length}</strong><span>cases shown</span></div>} />
+      <PageHeader eyebrow="The archive" title="Every case in this guide" description="Incidents and research demonstrations are kept distinct. Open a case for the MITRE ATLAS record, Field Guide summary, and cited sources. The home-page trail is an editorial comparison, not an official ATLAS relationship." aside={<div className="record-count"><strong>{results.length}</strong><span>cases shown</span></div>} />
       <div className="filter-bar">
         <label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => update("q", event.target.value, "")} placeholder="Search titles, actors, targets, methods…" /></label>
         <label><Funnel size={15} /><span className="sr-only">Event type</span><select value={type} onChange={(event) => update("type", event.target.value)}><option>All</option>{seed.methodology.event_types.map((item) => <option key={item}>{item}</option>)}</select></label>

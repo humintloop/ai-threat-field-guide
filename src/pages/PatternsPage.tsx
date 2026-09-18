@@ -10,17 +10,17 @@ export function PatternsPage() {
     ? `${grouped[0].name} is the only label that currently groups more than one case.`
     : grouped.length > 1
       ? `${grouped.length} of these labels currently group more than one case.`
-      : "Each label currently names a shape documented in a single case.";
+      : "Each pattern currently describes a single case.";
 
   return (
     <Reveal>
       <PageHeader
         eyebrow="Field Guide labels · not MITRE"
-        title={`${seed.patterns.length} named shapes`}
-        description={`Editors named shapes that show up in these records — a poisoned agent tool, malware that queries a model at runtime, an AI API used as a command channel. ${groupingNote} Each row still points to an ATLAS method ID.`}
-        aside={<div className="record-count"><strong>{seed.patterns.length}</strong><span>Field Guide labels</span></div>}
+        title={`${seed.patterns.length} editorial patterns`}
+        description={`Field Guide patterns help compare cases: a poisoned agent tool, malware that queries a model at runtime, or an AI API used as a command channel. ${groupingNote} They are editorial labels, not MITRE techniques; each pattern links to a related ATLAS technique.`}
+        aside={<div className="record-count"><strong>{seed.patterns.length}</strong><span>editorial patterns</span></div>}
       />
-      <SectionMarker>The {seed.patterns.length} shapes</SectionMarker>
+      <SectionMarker>All patterns</SectionMarker>
       <div className="pattern-index">
         {seed.patterns.map((pattern) => (
           <Link key={pattern.id} to={`/patterns/${pattern.id}`}>

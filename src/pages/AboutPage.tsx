@@ -5,7 +5,7 @@ import { seed } from "../data/model";
 
 function eventTypeCopy(type: string) {
   if (type === "Incident") {
-    return "Documented activity with real-world impact, as the pinned ATLAS record describes it — production systems, users, or confirmed effects.";
+    return "A case MITRE ATLAS classifies as an incident. Read the case record and cited sources for the documented scope, impact, and uncertainty.";
   }
   if (type === "Research Demonstration") {
     const example = seed.research_demonstrations[0];
@@ -19,17 +19,17 @@ function eventTypeCopy(type: string) {
       : "";
     return `A researcher showed a working path. This snapshot’s example is ${shortName}, targeting ${example.target}.${atlasClass}${wild}`;
   }
-  return "A label ATLAS supports. This snapshot has no records of this type yet.";
+  return "An ATLAS case type not represented in this snapshot.";
 }
 
 function mappingOriginCopy(origin: string) {
   if (origin === "MITRE ATLAS official") {
-    return `The case-to-technique link comes from the pinned ATLAS ${seed.atlas_snapshot.version} snapshot.`;
+    return `The case-to-technique relationship comes from the saved ATLAS ${seed.atlas_snapshot.version} snapshot.`;
   }
   if (origin === "Primary-source explicit") {
-    return "A primary report names this technique — a vendor write-up, CERT advisory, or the organization’s own disclosure.";
+    return "A source explicitly names the technique. This snapshot does not currently present these relationships as official ATLAS mappings.";
   }
-  return "A Field Guide interpretation. If we add one, it stays labeled as ours.";
+  return "A Field Guide interpretation, labeled as editorial rather than presented as an ATLAS relationship.";
 }
 
 export function AboutPage() {
@@ -38,7 +38,7 @@ export function AboutPage() {
       <PageHeader
         eyebrow="About the Field Guide"
         title="How records are labeled."
-        description={`This snapshot pins MITRE ATLAS ${seed.atlas_snapshot.version} for case facts, technique IDs, and official relationships. Trails, recurring names, and reading notes are Field Guide editorial. If an attempt did not get in, the record says so.`}
+        description={`This guide uses MITRE ATLAS ${seed.atlas_snapshot.version} for canonical case metadata, technique IDs, and official relationships. Case summaries, trails, and patterns are Field Guide editorial and are labeled accordingly. Failed outcomes remain visible.`}
       />
       <blockquote className="data-philosophy">“{seed.data_philosophy}”</blockquote>
       <div className="about-layout">
@@ -46,10 +46,10 @@ export function AboutPage() {
           <SectionMarker>Working rules</SectionMarker>
           <div className="principle-list">{seed.methodology.principles.map((principle, index) => <div key={principle}><span>0{index + 1}</span><p>{principle}</p></div>)}</div>
 
-          <SectionMarker>Incident, demonstration, or something else</SectionMarker>
+          <SectionMarker>Case classification</SectionMarker>
           <div className="method-grid">{seed.methodology.event_types.map((type) => <div key={type}><strong>{type}</strong><p>{eventTypeCopy(type)}</p></div>)}</div>
 
-          <SectionMarker>Where a technique link comes from</SectionMarker>
+          <SectionMarker>Technique relationship provenance</SectionMarker>
           <div className="method-grid">{seed.methodology.mapping_origin_values.map((origin) => <div key={origin}><strong>{origin}</strong><p>{mappingOriginCopy(origin)}</p></div>)}</div>
         </article>
 

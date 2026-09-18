@@ -61,21 +61,21 @@ export function TrailNav({ current }: { current?: string }) {
 
 export function TrailNarrative({ story }: { story: TrailStory }) {
   return <div className={`story-narrative tone-${story.tone}`}>
-    <div className="story-intro"><span className="eyebrow">Field Guide reading · from the pinned record</span><p>{story.hook}</p></div>
+    <div className="story-intro"><span className="eyebrow">Field Guide interpretation · based on cited sources</span><p>{story.hook}</p></div>
     <MechanismExplorer key={story.caseId} story={story} />
     {story.sections.map((section, index) => <section className="story-section" key={section.title}><span className="story-section-number">0{index + 1}</span><div><h2>{section.title}</h2><p>{section.text}</p><Receipt url={section.source} />{section.additionalSource && <> · <Receipt url={section.additionalSource} /></>}</div></section>)}
-    <aside className="story-distinction"><span className="eyebrow">Editorial reading</span><h2>{story.distinction.title}</h2><p>{story.distinction.text}</p><Receipt url={story.distinction.source} /></aside>
+    <aside className="story-distinction"><span className="eyebrow">What this comparison shows</span><h2>{story.distinction.title}</h2><p>{story.distinction.text}</p><Receipt url={story.distinction.source} /></aside>
   </div>;
 }
 
 export function KeepGoing({ story }: { story: TrailStory }) {
   const last = story === trail[trail.length - 1];
   return <section className={`keep-going tone-${story.tone}`}>
-    {last && <div className="trail-comparison"><span className="eyebrow">Three separate incidents</span><h2>A shared board, an assigned team, and one agent.</h2><div className="comparison-grid">{trail.map((item, i) => <article className={`tone-${item.tone}`} key={item.caseId}><span>0{i + 1}</span><h3>{item.mechanism}</h3><p>{item.pitch}</p><Link to={`/incidents/${item.caseId}`}>Revisit the case <ArrowRight size={16} /></Link><Receipt url={item.sections[0].source} /></article>)}</div></div>}
-    <span className="eyebrow">Keep going · {story.onward.reference ? 'Leaving the essay' : 'An editorial connection'}</span>
+    {last && <div className="trail-comparison"><span className="eyebrow">Three separate incidents</span><h2>Three ways agent activity was organized or adapted.</h2><div className="comparison-grid">{trail.map((item, i) => <article className={`tone-${item.tone}`} key={item.caseId}><span>0{i + 1}</span><h3>{item.mechanism}</h3><p>{item.pitch}</p><Link to={`/incidents/${item.caseId}`}>Revisit the case <ArrowRight size={16} /></Link><Receipt url={item.sections[0].source} /></article>)}</div></div>}
+    <span className="eyebrow">Continue · {story.onward.reference ? 'Leaving the trail' : 'Editorial comparison'}</span>
     <Link className="onward-link" to={`/incidents/${story.onward.caseId}`}><h2>{story.onward.title}</h2><ArrowRight size={36} /></Link>
     <p>{story.onward.reason}</p>
     <Receipt url={story.onward.source} />
-    <small className="connection-note">{story.onward.reference ? 'The next page is a standard archive record.' : 'Chosen by the Field Guide editors; not an official ATLAS relationship.'}</small>
+    <small className="connection-note">{story.onward.reference ? 'The next page is a standard case record.' : 'Chosen by the Field Guide editors; not an official ATLAS relationship.'}</small>
   </section>;
 }

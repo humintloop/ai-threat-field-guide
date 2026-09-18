@@ -9,10 +9,10 @@ import { canonicalPatternsForCase, caseById, seed } from "../data/model";
 
 function eventTypeFrame(eventType: string) {
   if (eventType === "Research Demonstration") {
-    return "ATLAS files this as a research demonstration: a controlled test, not an in-the-wild compromise.";
+    return "MITRE ATLAS classifies this as a research demonstration, not an in-the-wild compromise.";
   }
   if (eventType === "Incident") {
-    return "ATLAS files this as an incident: documented real-world activity, as the ATLAS record describes it.";
+    return "MITRE ATLAS classifies this as an incident. Read the record and cited sources for the documented scope and outcome.";
   }
   return `ATLAS files this as “${eventType}.”`;
 }
@@ -51,7 +51,7 @@ export function CaseDetailPage() {
         <aside className="ledger-notice">
           <span className="eyebrow">Leaving the essay</span>
           <h2>This is a standard archive record.</h2>
-          <p>The trail you were reading is a Field Guide essay. This page is MITRE’s pinned account of a different case, with our notes kept visible.</p>
+          <p>The trail is a Field Guide comparison. This page returns to a separate MITRE ATLAS case record, with the Field Guide summary and source limits kept visible.</p>
           <p>{hop.onward.reason}</p>
           <Link to={`/incidents/${hop.caseId}`}>Back to {hop.mechanism}</Link>
         </aside>
@@ -70,20 +70,20 @@ export function CaseDetailPage() {
       )}
       {story ? <TrailNarrative story={story} /> : (
         <section className="pinned-account">
-          <span className="eyebrow">The pinned account</span>
-          <h2>What MITRE recorded</h2>
-          <p className="section-lede">{eventTypeFrame(record.event_type)} The text below is copied from the ATLAS case record. It is the canonical account, not a Field Guide rewrite. Marks in the text point to sources further down.</p>
+          <span className="eyebrow">MITRE ATLAS record</span>
+          <h2>What the ATLAS record says</h2>
+          <p className="section-lede">{eventTypeFrame(record.event_type)} The text below is copied from the ATLAS case record, not rewritten by the Field Guide. Source markers link to the cited sources below.</p>
           <CanonicalAccount text={record.canonical_description} />
         </section>
       )}
       {story && <KeepGoing story={story} />}
       <details className="technical-disclosure">
-        <summary>The technical read <span>Named methods, recorded steps, and what this resembles</span></summary>
-        <details className="metadata-disclosure"><summary>What’s on the file</summary><MetadataGrid record={record} /></details>
+        <summary>Technical details <span>Mapped techniques, recorded steps, and Field Guide patterns</span></summary>
+        <details className="metadata-disclosure"><summary>Case details</summary><MetadataGrid record={record} /></details>
         {story && (
           <details className="metadata-disclosure">
-            <summary>The pinned MITRE account</summary>
-            <p className="section-lede">Copied from the ATLAS case record. This is the canonical account, not the essay above.</p>
+            <summary>MITRE ATLAS record</summary>
+            <p className="section-lede">Copied from the ATLAS case record. The Field Guide comparison appears above.</p>
             <CanonicalAccount text={record.canonical_description} />
           </details>
         )}
@@ -105,7 +105,7 @@ export function CaseDetailPage() {
 
             <Reveal className="prose-section">
               <SectionMarker>Named methods</SectionMarker>
-              <p className="section-lede">ATLAS is MITRE’s catalog of how AI-related attacks work. These are the methods the official record tied to this case. Click a name to see other cases that use it.</p>
+              <p className="section-lede">ATLAS is MITRE’s knowledge base of adversarial threats to AI systems. These are the techniques officially mapped to this case. Open one to see other mapped cases.</p>
               <div className="mapping-list">
                 {record.selected_atlas_mappings.map((mapping) => (
                   <Link key={mapping.id} to={`/techniques/${encodeURIComponent(mapping.id)}`} className="mapping-row">
@@ -122,8 +122,8 @@ export function CaseDetailPage() {
             </Reveal>
 
             <Reveal className="prose-section">
-              <SectionMarker>What they did, in order</SectionMarker>
-              <p className="section-lede">MITRE’s official step list for this case — not a Field Guide reconstruction. The small codes are ATLAS tactic IDs.</p>
+              <SectionMarker>Recorded procedure steps</SectionMarker>
+              <p className="section-lede">MITRE’s procedure steps for this case, not a Field Guide reconstruction. The smaller codes are ATLAS tactic IDs.</p>
               <div className="procedure-list">
                 {record.selected_atlas_mappings.flatMap((mapping) => mapping.procedures.map((procedure) => ({ mapping, procedure }))).sort((a, b) => a.procedure.step_id.localeCompare(b.procedure.step_id)).map(({ mapping, procedure }) => (
                   <div key={`${mapping.id}-${procedure.step_id}-${procedure.description.slice(0, 24)}`} className="procedure-row">
@@ -135,8 +135,8 @@ export function CaseDetailPage() {
             </Reveal>
 
             <Reveal className="prose-section">
-              <SectionMarker>What this resembles</SectionMarker>
-              <p className="section-lede">Shapes the Field Guide named because they show up in more than one case. They are a reading aid, not MITRE labels.</p>
+              <SectionMarker>Related Field Guide patterns</SectionMarker>
+              <p className="section-lede">Editorial patterns that help compare this case with others. A pattern may currently describe one case or several; it is not a MITRE label.</p>
               {patterns.length ? (
                 <div className="related-grid">
                   {patterns.map((pattern) => (
@@ -145,19 +145,19 @@ export function CaseDetailPage() {
                     </Link>
                   ))}
                 </div>
-              ) : <p className="muted-copy">This Field Guide has not tied this case to a named recurring shape.</p>}
+              ) : <p className="muted-copy">This Field Guide has not assigned an editorial pattern to this case.</p>}
               {record.patterns?.length ? <div className="tag-cluster" aria-label="Descriptive case tags">{record.patterns.map((tag) => <span key={tag}>{tag}</span>)}</div> : null}
             </Reveal>
           </article>
         </div>
 
-        <Link className="technical-network-link" to={`/network?q=${encodeURIComponent(record.id)}`}>See what this case connects to <ArrowRight size={16} /></Link>
+        <Link className="technical-network-link" to={`/network?q=${encodeURIComponent(record.id)}`}>View this case in the relationship map <ArrowRight size={16} /></Link>
       </details>
       <section id="evidence" className="evidence-section">
-        <SectionMarker>The receipts</SectionMarker>
+        <SectionMarker>Sources</SectionMarker>
         <div className="evidence-heading">
-          <h2>Where this comes from.</h2>
-          <p>Each link was named by the pinned ATLAS record or added by this Field Guide. If a source type or publication date is missing, we leave it blank rather than guess.</p>
+          <h2>Sources for this case</h2>
+          <p>Each link was named by the MITRE ATLAS record or added by the Field Guide. When publication details are unavailable in the dataset, the guide does not infer them.</p>
         </div>
         <div className="source-list">{record.source_records.map((source) => <ExternalSource key={source.url} url={source.url} title={source.title} origin={source.origin} />)}</div>
       </section>

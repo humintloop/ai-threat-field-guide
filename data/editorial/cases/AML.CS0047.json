@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "An inappropriately scoped GitHub token enabled a malicious commit to the Amazon Q Developer VS Code extension. The malicious prompt was designed to deploy an agent with broad tool trust and destructive instructions.",
+    "value": "An overly broad GitHub token allowed a malicious commit to the Amazon Q Developer VS Code extension. The prompt in that commit was designed to deploy an agent with broad tool access and destructive instructions.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

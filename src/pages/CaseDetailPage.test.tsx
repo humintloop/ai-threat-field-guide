@@ -19,31 +19,31 @@ describe("archive case copy", () => {
   it("frames LAMEHUG as a standard record after leaving the essay", () => {
     renderCase("ATFG-0010");
     expect(screen.getByRole("heading", { name: "This is a standard archive record." })).toBeInTheDocument();
-    expect(screen.getByText(/The trail you were reading is a Field Guide essay/)).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "What MITRE recorded" })).toBeInTheDocument();
-    expect(screen.getByText(/canonical account, not a Field Guide rewrite/)).toBeInTheDocument();
+    expect(screen.getByText(/The trail is a Field Guide comparison/)).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "What the ATLAS record says" })).toBeInTheDocument();
+    expect(screen.getByText(/not rewritten by the Field Guide/)).toBeInTheDocument();
     expect(screen.getByText(trail[2].onward.reason)).toBeInTheDocument();
   });
 
-  it("opens the technical read with named methods instead of a mapping dump", async () => {
+  it("opens technical details with mapped techniques instead of a mapping dump", async () => {
     const user = userEvent.setup();
     const { container } = renderCase("ATFG-0010");
     const summary = container.querySelector(".technical-disclosure > summary");
-    expect(summary).toHaveTextContent("Named methods, recorded steps, and what this resembles");
+    expect(summary).toHaveTextContent("Mapped techniques, recorded steps, and Field Guide patterns");
     await user.click(summary!);
     const disclosure = container.querySelector(".technical-disclosure");
     expect(within(disclosure as HTMLElement).getByText("Named methods")).toBeInTheDocument();
-    expect(within(disclosure as HTMLElement).getByText(/ATLAS is MITRE’s catalog/)).toBeInTheDocument();
-    expect(within(disclosure as HTMLElement).getByText("What they did, in order")).toBeInTheDocument();
-    expect(within(disclosure as HTMLElement).getByText("What this resembles")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /See what this case connects to/ })).toBeInTheDocument();
+    expect(within(disclosure as HTMLElement).getByText(/ATLAS is MITRE’s knowledge base/)).toBeInTheDocument();
+    expect(within(disclosure as HTMLElement).getByText("Recorded procedure steps")).toBeInTheDocument();
+    expect(within(disclosure as HTMLElement).getByText("Related Field Guide patterns")).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /View this case in the relationship map/ })).toBeInTheDocument();
   });
 
-  it("gives a non-trail incident the pinned account without a leaving-essay notice", () => {
+  it("gives a non-trail incident the ATLAS record without a leaving-trail notice", () => {
     renderCase("ATFG-0008");
     expect(screen.queryByRole("heading", { name: "This is a standard archive record." })).toBeNull();
-    expect(screen.getByRole("heading", { name: "What MITRE recorded" })).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Where this comes from." })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "What the ATLAS record says" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Sources for this case" })).toBeInTheDocument();
   });
 
   it("keeps trail case titles grounded and does not restack the card pitch under the headline", () => {

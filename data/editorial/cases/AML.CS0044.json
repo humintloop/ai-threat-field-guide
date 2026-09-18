@@ -5,7 +5,7 @@
   "featured": false,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "LAMEHUG used an LLM endpoint to dynamically generate malicious commands from natural-language prompts after delivery through phishing.",
+    "value": "After delivery through phishing, LAMEHUG called an LLM endpoint to generate malicious commands from natural-language prompts.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [
@@ -20,7 +20,7 @@
   ],
   "agentic_classification": null,
   "observed_outcome": {
-    "value": "The malware collected local system information and files and exfiltrated data to attacker-controlled infrastructure.",
+    "value": "The malware collected local system information and files, then exfiltrated data to attacker-controlled infrastructure.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [

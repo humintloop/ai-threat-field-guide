@@ -21,7 +21,7 @@ describe("ArchiveRow", () => {
 });
 
 describe("source and date labels", () => {
-  it("opens the original report without implying a classification", () => {
+  it("opens a cited source without implying a classification", () => {
     render(
       <ExternalSource
         url="https://cert.gov.ua/article/6284730"
@@ -29,8 +29,8 @@ describe("source and date labels", () => {
         origin="MITRE ATLAS reference"
       />,
     );
-    expect(screen.getByText(/Named by ATLAS · type not stated/)).toBeInTheDocument();
-    expect(screen.getByText("Open original")).toBeInTheDocument();
+    expect(screen.getByText("Named by ATLAS")).toBeInTheDocument();
+    expect(screen.getByText("Open source")).toBeInTheDocument();
   });
 
   it("shows month-level dates without inventing a day", () => {

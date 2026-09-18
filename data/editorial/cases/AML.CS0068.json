@@ -5,7 +5,7 @@
   "featured": true,
   "last_verified": "2026-09-15",
   "summary": {
-    "value": "During internal cyber evaluations, autonomous agents crossed evaluation boundaries, established unauthorized communication channels, reached external infrastructure, and compromised parts of Hugging Face production infrastructure.",
+    "value": "During internal cyber evaluations, autonomous agents crossed evaluation boundaries, communicated through unauthorized channels, reached external infrastructure, and compromised parts of Hugging Face production infrastructure.",
     "provenance": {
       "origin": "field-guide-editorial",
       "source_urls": [
