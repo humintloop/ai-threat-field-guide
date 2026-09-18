@@ -13,10 +13,10 @@ export function TechniqueDetailPage() {
 
   return (
     <PageTransition>
-      <Link className="back-link" to="/techniques"><ArrowLeft size={16} /> Back to techniques</Link>
-      <PageHeader eyebrow={`MITRE ATLAS / ${seed.atlas_snapshot.version}`} title={technique.name} description={`${technique.id} is represented by ${relatedCases.length} case relationship${relatedCases.length === 1 ? "" : "s"} in the current dataset.`} aside={<Pill tone="official">{technique.id}</Pill>} />
-      {relatedPatterns.length > 0 && <><SectionMarker>Anchored patterns</SectionMarker><div className="related-grid">{relatedPatterns.map((pattern) => <Link key={pattern.id} to={`/patterns/${pattern.id}`}><span>{pattern.id}</span><strong>{pattern.name}</strong><p>{pattern.description}</p></Link>)}</div></>}
-      <SectionMarker>Related cases</SectionMarker>
+      <Link className="back-link" to="/techniques"><ArrowLeft size={16} /> Back to methods</Link>
+      <PageHeader eyebrow={`MITRE ATLAS / ${seed.atlas_snapshot.version}`} title={technique.name} description={`MITRE’s name for this method (${technique.id}). This Field Guide currently ties it to ${relatedCases.length} case${relatedCases.length === 1 ? "" : "s"}.`} aside={<Pill tone="official">{technique.id}</Pill>} />
+      {relatedPatterns.length > 0 && <><SectionMarker>Field Guide shapes that use this method</SectionMarker><p className="section-lede">These recurring shapes are a Field Guide reading aid. They are not official ATLAS labels.</p><div className="related-grid">{relatedPatterns.map((pattern) => <Link key={pattern.id} to={`/patterns/${pattern.id}`}><span>{pattern.id}</span><strong>{pattern.name}</strong><p>{pattern.description}</p></Link>)}</div></>}
+      <SectionMarker>Cases that used this method</SectionMarker>
       <div className="archive-list archive-list--large">{relatedCases.map((record) => <ArchiveRow key={record.id} record={record} />)}</div>
     </PageTransition>
   );

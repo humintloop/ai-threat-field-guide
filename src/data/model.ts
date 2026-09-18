@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { storyByCase } from "./trail";
 import seedJson from "../../data/generated/field-guide.json";
 
 const eventTypeSchema = z.enum([
@@ -242,7 +243,7 @@ export const metrics = {
 
 export type SearchResult = {
   id: string;
-  kind: "Case" | "Pattern" | "Technique" | "Source";
+  kind: "Case" | "Recurring" | "Technique" | "Source";
   title: string;
   meta: string;
   href: string;
@@ -270,6 +271,9 @@ export function searchAll(query: string): SearchResult[] {
       record.id,
       record.title,
       record.summary,
+      storyByCase.get(record.id)?.title ?? "",
+      storyByCase.get(record.id)?.hook ?? "",
+      storyByCase.has(record.id) ? "Who’s directing the attack" : "",
       record.actor ?? "",
       record.target,
       record.swarm_classification ?? "",
@@ -283,7 +287,7 @@ export function searchAll(query: string): SearchResult[] {
   }
   for (const pattern of seed.patterns) {
     const score = searchScore(query, [pattern.id, pattern.name, pattern.description, pattern.primary_atlas_technique], [pattern.id, pattern.name]);
-    if (score) results.push({ id: pattern.id, kind: "Pattern", title: pattern.name, meta: `${pattern.related_cases.length} related case${pattern.related_cases.length === 1 ? "" : "s"}`, href: `/patterns/${pattern.id}`, score });
+    if (score) results.push({ id: pattern.id, kind: "Recurring", title: pattern.name, meta: `${pattern.related_cases.length} related case${pattern.related_cases.length === 1 ? "" : "s"}`, href: `/patterns/${pattern.id}`, score });
   }
   for (const technique of techniques) {
     const score = searchScore(query, [technique.id, technique.name], [technique.id, technique.name]);

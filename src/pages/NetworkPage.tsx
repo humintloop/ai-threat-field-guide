@@ -2,12 +2,12 @@ import { ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import { useMemo } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Reveal } from "../components/Motion";
-import { PageHeader, SectionMarker } from "../components/ResearchUI";
+import { PageHeader, SectionMarker, mappingOriginLabel } from "../components/ResearchUI";
 import { RelationshipGraph } from "../components/RelationshipGraph";
 import { graphForCases, type GraphKind } from "../data/graph";
 import { cases, seed, techniques } from "../data/model";
 
-const kinds: { id: GraphKind; label: string }[] = [{ id: "case", label: "Cases" }, { id: "pattern", label: "Patterns" }, { id: "technique", label: "Techniques" }];
+const kinds: { id: GraphKind; label: string }[] = [{ id: "case", label: "Cases" }, { id: "pattern", label: "Recurring" }, { id: "technique", label: "Techniques" }];
 
 export function NetworkPage() {
   const [params, setParams] = useSearchParams();
@@ -46,29 +46,30 @@ export function NetworkPage() {
 
   return (
     <Reveal>
-      <PageHeader eyebrow="Investigation surface" title="Relationship network" description="Explore only the case, pattern, and technique relationships declared by the current dataset. Hover to isolate a thread; select a node to open its record." aside={<div className="record-count"><strong>{filteredGraph.nodes.length}</strong><span>visible nodes</span></div>} />
+      <PageHeader eyebrow="How they connect" title="The connection map" description="Cases, recurring shapes, and ATLAS methods — linked only where this dataset says they are. Hover a node to isolate a thread. Click to open the record. Recurring shapes are Field Guide readings, not MITRE labels." aside={<div className="record-count"><strong>{filteredGraph.nodes.length}</strong><span>items shown</span></div>} />
       <div className="network-controls">
-        <label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Find a case, pattern, or technique…" /></label>
+        <label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Find a case, recurring shape, or method…" /></label>
         <div className="kind-toggles">{kinds.map((kind) => <button key={kind.id} type="button" className={visibleKinds.has(kind.id) ? "is-active" : ""} onClick={() => toggleKind(kind.id)} aria-pressed={visibleKinds.has(kind.id)}>{kind.label}</button>)}</div>
       </div>
-      <div className="network-canvas"><RelationshipGraph data={filteredGraph} /></div>
+      <div className="network-canvas"><RelationshipGraph data={filteredGraph} ariaLabel="Map of cases, recurring shapes, and ATLAS methods in this dataset" /></div>
       <section className="network-list">
-        <SectionMarker>Accessible relationship list</SectionMarker>
+        <SectionMarker>The same connections, as a list</SectionMarker>
         {filteredGraph.edges.map((edge) => {
           const source = filteredNodeById.get(edge.source);
           const target = filteredNodeById.get(edge.target);
           if (!source || !target) return null;
+          const kindLabel = (kind: string) => kind === "pattern" ? "recurring" : kind === "technique" ? "method" : kind;
           return (
             <div key={edge.id}>
-              <Link to={source.href}><span>{source.kind}</span><strong>{source.label}</strong></Link>
+              <Link to={source.href}><span>{kindLabel(source.kind)}</span><strong>{source.label}</strong></Link>
               <ArrowRight size={17} aria-hidden="true" />
-              <Link to={target.href}><span>{target.kind}</span><strong>{target.label}</strong></Link>
-              <span>{edge.provenance ?? "Field Guide pattern relationship"}</span>
+              <Link to={target.href}><span>{kindLabel(target.kind)}</span><strong>{target.label}</strong></Link>
+              <span>{edge.provenance ? mappingOriginLabel(edge.provenance) : "Field Guide shape · not an ATLAS link"}</span>
             </div>
           );
         })}
-        {!filteredGraph.edges.length && <div className="empty-state"><strong>No complete relationships match this view.</strong><p>Enable another record type or broaden the search to restore connected records.</p></div>}
-        <p className="network-list__summary">Dataset scope: {cases.length} cases and demonstrations, {seed.patterns.length} canonical patterns, {techniques.length} represented techniques.</p>
+        {!filteredGraph.edges.length && <div className="empty-state"><strong>Nothing connects in this view.</strong><p>Turn another type back on, or broaden the search.</p></div>}
+        <p className="network-list__summary">This set: {cases.length} cases, {seed.patterns.length} Field Guide shapes, {techniques.length} ATLAS methods.</p>
       </section>
     </Reveal>
   );

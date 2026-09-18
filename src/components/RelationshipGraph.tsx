@@ -35,13 +35,13 @@ export function RelationshipGraph({ data, className = "", ariaLabel = "Case, pat
       maxZoom: 1.65,
       wheelSensitivity: 0.18,
       style: [
-        { selector: "node", style: { "background-color": "#24272d", "border-color": "#565b63", "border-width": 1, color: "#f2f1ed", label: "data(label)", "font-family": "IBM Plex Mono", "font-size": 11, "text-wrap": "wrap", "text-max-width": 150, "text-valign": "center", "text-halign": "center", width: 170, height: 52, shape: "round-rectangle", "transition-property": "opacity, border-color, background-color", "transition-duration": "180ms" } },
-        { selector: 'node[kind = "case"]', style: { "background-color": "#1f2126", "border-color": "#f04b3e", width: 190, height: 60 } },
-        { selector: 'node[kind = "pattern"]', style: { "background-color": "#29272c", "border-color": "#8b748e" } },
-        { selector: 'node[kind = "technique"]', style: { "background-color": "#192328", "border-color": "#5c8595" } },
-        { selector: "edge", style: { width: 1, "line-color": "#3b3f46", "target-arrow-color": "#3b3f46", "target-arrow-shape": "triangle", "curve-style": "bezier", opacity: 0.72, "transition-property": "opacity, line-color, width", "transition-duration": "180ms" } },
+        { selector: "node", style: { "background-color": "#161c26", "border-color": "#2e3c4e", "border-width": 1, color: "#d4e4ef", label: "data(label)", "font-family": "JetBrains Mono", "font-size": 11, "text-wrap": "wrap", "text-max-width": 150, "text-valign": "center", "text-halign": "center", width: 170, height: 52, shape: "round-rectangle", "transition-property": "opacity, border-color, background-color", "transition-duration": "180ms" } },
+        { selector: 'node[kind = "case"]', style: { "background-color": "#11161f", "border-color": "#e5484d", width: 190, height: 60 } },
+        { selector: 'node[kind = "pattern"]', style: { "background-color": "#161326", "border-color": "#a78bfa" } },
+        { selector: 'node[kind = "technique"]', style: { "background-color": "#101820", "border-color": "#4b9fe8" } },
+        { selector: "edge", style: { width: 1, "line-color": "#222c3a", "target-arrow-color": "#222c3a", "target-arrow-shape": "triangle", "curve-style": "bezier", opacity: 0.72, "transition-property": "opacity, line-color, width", "transition-duration": "180ms" } },
         { selector: ".is-dimmed", style: { opacity: 0.12 } },
-        { selector: ".is-active", style: { opacity: 1, "border-color": "#f2f1ed", "line-color": "#f04b3e", "target-arrow-color": "#f04b3e", width: 2 } },
+        { selector: ".is-active", style: { opacity: 1, "border-color": "#d4e4ef", "line-color": "#e5484d", "target-arrow-color": "#e5484d", width: 2 } },
       ] as cytoscape.StylesheetJson,
     });
 

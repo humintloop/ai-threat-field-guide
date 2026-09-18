@@ -31,16 +31,16 @@ export function IncidentsPage() {
 
   return (
     <Reveal>
-      <PageHeader eyebrow="Case archive" title="Incidents & demonstrations" description="Browse documented incidents and research demonstrations without collapsing the distinction between them." aside={<div className="record-count"><strong>{results.length}</strong><span>visible records</span></div>} />
+      <PageHeader eyebrow="The archive" title="Every case in this guide" description="Real-world incidents and research demonstrations, kept distinct. Open a case for MITRE’s pinned account. The trail on the home page is a separate Field Guide reading, not an official ATLAS relationship." aside={<div className="record-count"><strong>{results.length}</strong><span>cases shown</span></div>} />
       <div className="filter-bar">
-        <label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => update("q", event.target.value, "")} placeholder="Search cases, actors, targets, tags…" /></label>
+        <label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => update("q", event.target.value, "")} placeholder="Search titles, actors, targets, methods…" /></label>
         <label><Funnel size={15} /><span className="sr-only">Event type</span><select value={type} onChange={(event) => update("type", event.target.value)}><option>All</option>{seed.methodology.event_types.map((item) => <option key={item}>{item}</option>)}</select></label>
-        <label><span className="sr-only">Agentic classification</span><select value={agentic} onChange={(event) => update("agentic", event.target.value)}><option>All</option><option>Agentic</option><option>Not classified</option></select></label>
+        <label><span className="sr-only">Whether the case uses AI agents</span><select value={agentic} onChange={(event) => update("agentic", event.target.value)}><option>All</option><option value="Agentic">Uses AI agents</option><option value="Not classified">Not labeled that way</option></select></label>
         <label><span className="sr-only">Sort order</span><select value={sort} onChange={(event) => update("sort", event.target.value, "newest")}><option value="newest">Newest first</option><option value="oldest">Oldest first</option></select></label>
       </div>
       <div className="archive-list archive-list--large">
         {results.map((record) => <ArchiveRow key={record.id} record={record} />)}
-        {!results.length && <div className="empty-state"><strong>No cases match this view.</strong><p>Try clearing a filter or using a broader search term.</p></div>}
+        {!results.length && <div className="empty-state"><strong>No cases match this view.</strong><p>Clear a filter or try a broader word.</p></div>}
       </div>
     </Reveal>
   );

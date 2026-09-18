@@ -11,9 +11,9 @@ export function SourcesPage() {
   const results = useMemo(() => sources.filter((source) => `${source.hostname} ${source.title} ${source.url} ${source.caseIds.join(" ")}`.toLowerCase().includes(query.toLowerCase())), [query]);
   return (
     <Reveal>
-      <PageHeader eyebrow="Evidence index" title="Sources" description="Official ATLAS references and Field Guide additional sources, deduplicated and connected to the cases that reference them. No source class is inferred." aside={<div className="record-count"><strong>{sources.length}</strong><span>unique sources</span></div>} />
-      <div className="filter-bar filter-bar--solo"><label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => setParams(event.target.value ? { q: event.target.value } : {}, { replace: true })} placeholder="Search domains, URLs, or case IDs…" /></label></div>
-      <SectionMarker>Source archive</SectionMarker>
+      <PageHeader eyebrow="The receipts" title="Original reports" description="Every document this guide cites. MITRE’s ATLAS links and extra Field Guide sources, listed once, with the cases that point to them. If we don’t know a source type, we don’t invent one." aside={<div className="record-count"><strong>{sources.length}</strong><span>documents cited</span></div>} />
+      <div className="filter-bar filter-bar--solo"><label className="filter-search"><MagnifyingGlass size={17} /><input value={query} onChange={(event) => setParams(event.target.value ? { q: event.target.value } : {}, { replace: true })} placeholder="Search a site, title, or case ID…" /></label></div>
+      <SectionMarker>Cited documents</SectionMarker>
       <div className="source-list source-list--index">
         {results.map((source) => (
           <div key={source.url} className="source-index-item">
